@@ -19,7 +19,7 @@
             </div>
         {% endif %}
 
-        <form method="post">
+        <!-- <form method="post">
             {% csrf_token %}
             
             <div class="mb-3">
@@ -45,7 +45,37 @@
             <button type="submit" class="btn btn-success w-100">
                 Register and Login
             </button>
-        </form>
+        </form> -->
+       <form method="post">
+    {% csrf_token %}
+    
+    <div class="mb-3">
+        <label class="form-label">Username</label>
+        <input type="text" name="username" class="form-control" required>
+        {% if form.username.errors %}
+            <div class="text-danger small">{{ form.username.errors }}</div>
+        {% endif %}
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input type="password" name="password1" class="form-control" required>
+        <div class="form-text">Must be at least 8 characters.</div>
+        {% if form.password1.errors %}
+            <div class="text-danger small">{{ form.password1.errors }}</div>
+        {% endif %}
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Confirm Password</label>
+        <input type="password" name="password2" class="form-control" required>
+        {% if form.password2.errors %}
+            <div class="text-danger small">{{ form.password2.errors }}</div>
+        {% endif %}
+    </div>
+
+    <button type="submit" class="btn btn-success w-100">Register and Login</button>
+</form>
 
         <hr>
 

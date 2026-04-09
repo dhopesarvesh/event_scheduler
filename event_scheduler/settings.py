@@ -103,13 +103,23 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/6.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+# settings.py
 
-TIME_ZONE = 'UTC'
+# Set this to IST for correct local time in India
+TIME_ZONE = 'Asia/Kolkata' 
 
 USE_I18N = True
 
+# USE_L10N must be False for TIME_FORMAT to be respected
+USE_L10N = False  
+
 USE_TZ = True
+
+# This controls how time is displayed in your templates and admin panel
+TIME_FORMAT = 'h:i A' 
+
+# Optional: If you want dates to look standard (e.g., 09 Apr 2026)
+DATE_FORMAT = 'd M Y'
 
 
 # Static files (CSS, JavaScript, Images)

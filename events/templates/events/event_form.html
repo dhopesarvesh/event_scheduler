@@ -27,6 +27,7 @@
                 
                 <div class="mb-3">
                     {{ form.as_p }}
+
                 </div>
 
                 
@@ -37,6 +38,9 @@
                     <button type="submit" class="btn btn-success">
                         Save Event
                     </button>
+                    {% if form.non_field_errors %}
+    
+{% endif %}
                 </div>
             </form>
 
